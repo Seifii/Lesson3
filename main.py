@@ -5,10 +5,12 @@ class Student:
         self.gladness = 50
         self.progress = 0
         self.alive = True
+        self.money = 0
     def to_study(self):
         print("Time to study")
         self.progress += 0.12
         self.gladness -= 5
+        self.money += 50 #нагорода за навчання
     def to_sleep(self):
         print("I will sleep")
         self.gladness += 3
@@ -16,6 +18,7 @@ class Student:
         print("Rest time")
         self.gladness += 5
         self.progress -= 0.1
+        self.money -= 25
 
     def is_alive(self):
         if self.progress < -0.5:
@@ -31,6 +34,7 @@ class Student:
     def end_of_day(self):
         print(f"Gladness = {self.gladness}")
         print(f"Progress ={round(self.progress, 2)}")
+        print(f"Money = {self.money}")
 
     def live(self, day):
         day = "Day" + str(day) + "of" + self.name + "life"
